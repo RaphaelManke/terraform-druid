@@ -17,5 +17,6 @@ resource "template_file" "master_user_data" {
   template = "${file("${path.module}/master-user_data.sh")}"
 
   vars {
+    dataIp="${aws_elb.data-load_balancer.dns_name}"
   }
 }

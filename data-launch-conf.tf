@@ -17,5 +17,6 @@ resource "template_file" "data_user_data" {
 
   vars {
     masterIp = "${aws_instance.master.private_ip}"
+    data-conf = "${file("${path.module}/tranquilty.conf.json")}"
   }
 }

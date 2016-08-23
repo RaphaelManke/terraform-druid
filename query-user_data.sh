@@ -7,6 +7,8 @@ function init {
     tar -xzf imply-1.3.0.tar.gz
     cd imply-1.3.0
     sed -i 's/master.example.com/${masterIp}/g' conf/druid/_common/common.runtime.properties
+    sed -i 's/-Xms24g/-Xms4g/g' conf/druid/broker/jvm.config
+    sed -i 's/-Xmx24g/-Xmx4g/g' conf/druid/broker/jvm.config
     bin/supervise -c conf/supervise/query.conf
 }
 init

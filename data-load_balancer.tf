@@ -19,4 +19,20 @@ resource "aws_elb" "data-load_balancer" {
     lb_protocol = "http"
   }
 
+
+  listener {
+    instance_port = 8083
+    instance_protocol = "http"
+    lb_port = 8083
+    lb_protocol = "http"
+  }
+
+
+  listener {
+    instance_port = 8091
+    instance_protocol = "http"
+    lb_port = 8091
+    lb_protocol = "http"
+  }
+
 }

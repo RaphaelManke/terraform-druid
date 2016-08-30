@@ -6,5 +6,6 @@ resource "aws_autoscaling_group" "query-autoscaling-group" {
 
   availability_zones = ["${aws_subnet.vpc.availability_zone}"]
   vpc_zone_identifier = ["${aws_subnet.vpc.id}"]
+  load_balancers = ["${aws_elb.query-load_balancer.id}"]
   launch_configuration = "${aws_launch_configuration.query-launch-conf.id}"
 }
